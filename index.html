@@ -1,3 +1,42 @@
-#border{color:red;width:300px;height:300px;}
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>JS</title>
+		<meta http-equiv='content-type' content='text/html; charset=utf-8'>
+		<meta name = 'viewport' content ='width=device-width, initial-scale=1.0'>
 
-<div id='border' ><p>This is a test paragraph</p></div>
+		<style>
+			*{font-size:44px;font-family:helvetica; list-style:none}
+			#uk{width:600px; height:600px; background:blue;
+			position:relative;
+			}
+			#london{width:300px; height:300px; background:yellow;
+			position:absolute;top:50%; left:50%;
+			margin-top:-150px;margin-left:-150px;
+			color:black; line-height:300px;text-align:center;}
+		</style>
+	</head>
+<body>
+
+		<div id='uk'> UK
+			<div id='london'>London</div>
+		</div>
+		
+		<script type = 'text/javascript'>			
+			var uk = document.getElementById('uk');
+			var london = document.getElementById('london');
+			
+			function welcome_to_uk(){
+				console.log('welcome to UK');
+			}
+			
+			function welcome_to_london(){
+				console.log('welcome to London');
+				//event.stopPropagation();
+			}
+			
+			uk.addEventListener('click',welcome_to_uk, false);
+			london.addEventListener('click',welcome_to_london, true);
+		</script>
+</body>
+</html>
